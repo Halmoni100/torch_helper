@@ -29,6 +29,7 @@ def train(train_dataloader, val_dataloader, train_size, val_size, inputs_labels_
                            do_carriage_return=do_carriage_return)
         pbar.start(front_msg="Train ")
 
+        model.train()
         optimizer.zero_grad()
         train_metric_sum = torch.zeros(1, device=device)
         train_loss_sum = torch.zeros(1, device=device)
@@ -54,6 +55,7 @@ def train(train_dataloader, val_dataloader, train_size, val_size, inputs_labels_
                            do_carriage_return=do_carriage_return)
         pbar.start(front_msg="Val ")
 
+        model.eval()
         val_metric_sum = torch.zeros(1, device=device)
         val_loss_sum = torch.zeros(1, device=device)
         for data in val_dataloader:
