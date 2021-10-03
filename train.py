@@ -51,7 +51,7 @@ def train(train_dataloader, val_dataloader, train_size, val_size, inputs_labels_
         # Validation
         torch.set_grad_enabled(False)
 
-        pbar = ProgressBar(len(val_dataloader), lenth=pbar_val_len,
+        pbar = ProgressBar(len(val_dataloader), length=pbar_val_len,
                            do_carriage_return=do_carriage_return)
         pbar.start(front_msg="Val ")
 
